@@ -1,0 +1,54 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+$imageBoxHeight: 500px;
+
+.wrapper {
+  @include page();
+  padding-top: 50px;
+}
+
+.imageBox {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: $imageBoxHeight;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .explanation {
+    height: 0px;
+    padding: 0px;
+    position: relative;
+    background-color: rgba(16, 13, 13, 0.946);
+    color:rgba(16, 13, 13, 0.946);
+    transition: 1s color;
+  }
+  .moreBtn {
+    transform: rotate(180deg);
+    transition: 1s all;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    :active {
+      border: 2px solid $yellow;
+      border-radius: 50%;
+    }
+  }
+  .videoBox{
+    position: absolute;
+  }
+}
+.opened {
+    .explanation {
+      height: fit-content;
+      padding: 20px;
+      color: $gray;
+    }
+    .moreBtn{
+        transform: rotate(0deg);
+    }
+  }

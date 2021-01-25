@@ -1,0 +1,56 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+.wrapper{
+    @include page();
+    padding-top: 50px;
+}
+
+.card{
+    margin: 5px;
+    padding: 10px !important;
+    border: 1px solid gray;
+    max-height: 400px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.7s;
+    &:after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 50px;
+        background: linear-gradient(to bottom,  #3335339c,  #333533d9, #333533);
+    }
+    .hideBtn, .showBtn{
+        color: $yellow;
+        cursor: pointer;
+        font-size: 1.4em;
+    }
+    .showBtn{
+        transition: display 1s;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-left: 30px;
+        margin-bottom: 5px;
+        z-index: 2;
+    }
+}
+.card.opened{
+    transition: max-height 0.7s;
+    max-height: 5000px;
+    &:after{
+        display: none;
+    }
+    .showBtn{
+        display: none;
+    }
+}
+.card_section{
+    margin-bottom: 10px;
+    a{
+        color: $yellow !important;
+        
+    }
+}

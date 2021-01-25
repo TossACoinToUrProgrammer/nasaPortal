@@ -1,0 +1,56 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.wrapper {
+  @include page();
+}
+
+h2 {
+  margin: 0 !important;
+}
+.formWrapper {
+  max-width: 600px;
+}
+.linksWrapper {
+  width: fit-content;
+}
+.separate {
+  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  .line {
+    border-top: 2px solid orange;
+    height: 2px;
+    width: 110%;
+  }
+  span {
+    position: absolute;
+    background-color: $grayBlack;
+    z-index: 2;
+    padding: 5px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  margin-top: 20px;
+  border-radius: 10px;
+  height: 50px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.8);
+  color: white;
+  &:hover {
+    box-shadow: 8px 9px 10px 1px rgba(0, 0, 0, 0.8);
+  }
+  &_logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+}
