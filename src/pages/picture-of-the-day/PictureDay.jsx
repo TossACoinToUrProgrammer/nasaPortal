@@ -4,7 +4,7 @@ import Preloader from "../../components/Preloader/Preloader";
 import ArrowDropDownCircleIcon from "@material-ui/icons/ArrowDropDownCircle";
 import { getApodPic } from "../../redux/reducers/pictureDayReducer";
 import css from "./PictureDay.module.scss";
-
+import { HashLink } from 'react-router-hash-link';
 const PictureDay = ({ pic, isLoading, getApodPic }) => {
   
   useEffect(() => {
@@ -26,7 +26,7 @@ const PictureDay = ({ pic, isLoading, getApodPic }) => {
           {pic.media_type !== "video" && (
             <>
               <div className={css.moreBtn} onClick={openExplanationHandler}>
-                <a href='#explanation' title='explanation'><ArrowDropDownCircleIcon /></a>
+                <HashLink to='#explanation' title='explanation'><ArrowDropDownCircleIcon /></HashLink>
               </div>
               <div className={css.explanation}>
                 <p>{pic.explanation}</p>

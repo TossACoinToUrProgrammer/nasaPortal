@@ -1,7 +1,7 @@
 import React from "react";
 import css from "../SpaceWeather.module.scss";
 import MessageBody from "./MessageBody";
-
+import { HashLink } from 'react-router-hash-link';
 const ActionSection = ({ index }) => {
   const showMoreHandler = (e) => {
     let ul = e.target.closest("." + css.card);
@@ -12,11 +12,11 @@ const ActionSection = ({ index }) => {
       <span onClick={showMoreHandler} className={css.showBtn}>
         show more
       </span>
-      <a href={"#" + index}>
+      <HashLink to={"#" + index}>
         <span onClick={showMoreHandler} className={css.hideBtn}>
           hide
         </span>
-      </a>
+      </HashLink>
     </>
   );
 };
@@ -24,7 +24,7 @@ const NewsCard = ({ item, index }) => {
   let indexProp = index + 1;
   return (
     <ul className={css.card}>
-      <a name={indexProp}></a>
+      <a id={indexProp}></a>
       #: {indexProp}
       <MessageBody text={item.messageBody} />
       <ActionSection index={indexProp} />

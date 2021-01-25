@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-
+import { HashLink } from 'react-router-hash-link';
 import css from "./Navbar.module.scss";
 
 import { logout } from "../../redux/reducers/authReducer";
@@ -38,7 +38,7 @@ const Navbar = ({ email, logout }) => {
         <NavLink to="/">NASA</NavLink>
       </div>
       <div className="container">
-        <a name="top"></a>
+        <a id="top"></a>
         <ul className={css.navbar}>
           {links.map((item, index) => (
             <NavItem path={item.path} title={item.title} index={index} key={index} />
@@ -46,7 +46,7 @@ const Navbar = ({ email, logout }) => {
         </ul>
         <ul className={css.sideNavbar}>
           <li>
-            <a className={css.navbar__item} href="#top"></a>
+            <HashLink className={css.navbar__item} to="#top"></HashLink>
           </li>
         </ul>
       </div>
