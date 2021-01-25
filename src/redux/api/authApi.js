@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api/auth",
+  baseURL: "https://guarded-sierra-72255.herokuapp.com/api/auth",
 });
 
 export const authApi = {

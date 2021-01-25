@@ -75,7 +75,7 @@ const AuthForm = ({ register, login, error }) => {
         </div>
         <div className={css.linksWrapper}>
           <a
-            href="http://localhost:5000/api/auth/google"
+            href="https://guarded-sierra-72255.herokuapp.com/api/auth/google"
             className={css.link}
             style={{ backgroundColor: "#b81717" }}
           >
@@ -87,7 +87,7 @@ const AuthForm = ({ register, login, error }) => {
             <span>Sign In with Google</span>
           </a>
           <a
-            href="http://localhost:5000/api/auth/google"
+            href="https://guarded-sierra-72255.herokuapp.com/api/auth/google"
             className={css.link}
             style={{ backgroundColor: "#205fa2" }}
           >
